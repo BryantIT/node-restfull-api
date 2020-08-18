@@ -3,13 +3,11 @@ const mongoose = require('mongoose')
 const app = express()
 require('dotenv/config')
 
-//ROUTES
+const postsRoutes = require('./routes/posts')
+app.use('/posts', postsRoutes)
+
 app.get('/', (req, res) => {
   res.send('Hello world')
-})
-
-app.get('/posts', (req, res) => {
-  res.send('Hello posts')
 })
 
 //Connect to DB
